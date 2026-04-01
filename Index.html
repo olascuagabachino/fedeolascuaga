@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federico Olascuaga Bachino — Docente · Historiador ·</title>
+<meta name="description" content="Sitio personal de Federico Olascuaga Bachino. Profesor de Historia, investigador y autor. Doctorando en Historia (UdelaR). Maldonado, Uruguay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--paper:#f7f5f0;--cream:#eae6dc;--warm:#c4a35a;--warm-dark:#9e7e35;--accent:#8b3a3a;--blue:#3a6b9f;--muted:#6b6560;--divider:#d4cfc6;--card-bg:#fff;--shadow-soft:0 2px 20px rgba(0,0,0,.06);--shadow-hover:0 8px 40px rgba(0,0,0,.1);--radius:6px;--max-w:1140px;--t:.35s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none;transition:color var(--t)}
+a:hover{color:var(--warm-dark)}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
+.section-label{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);margin-bottom:.75rem}
+
+/* HEADER */
+.site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(247,245,240,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--divider);transition:box-shadow var(--t)}
+.site-header.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:.9rem 2rem}
+.logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink)}
+.logo span{color:var(--warm)}
+nav{display:flex;gap:1.5rem;align-items:center}
+nav a{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);position:relative;padding-bottom:2px}
+nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--warm);transition:width var(--t)}
+nav a:hover,nav a.active{color:var(--ink)}
+nav a:hover::after,nav a.active::after{width:100%}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1001}
+.mobile-toggle span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:var(--t)}
+.mobile-toggle span:nth-child(1){top:0}.mobile-toggle span:nth-child(2){top:9px}.mobile-toggle span:nth-child(3){top:18px}
+.mobile-toggle.open span:nth-child(1){transform:rotate(45deg);top:9px}
+.mobile-toggle.open span:nth-child(2){opacity:0}
+.mobile-toggle.open span:nth-child(3){transform:rotate(-45deg);top:9px}
+
+/* HERO */
+.hero{padding:10rem 0 6rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:-10%;width:55%;height:100%;background:linear-gradient(135deg,var(--cream) 0%,transparent 70%);border-radius:0 0 0 40%;z-index:0}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.hero-text h1{font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:1rem}
+.hero-text h1 em{font-style:italic;color:var(--accent)}
+.hero-subtitle{font-size:1.08rem;color:var(--muted);font-weight:300;line-height:1.8}
+.hero-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.hero-tags span{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border:1.5px solid var(--divider);border-radius:50px;color:var(--muted);transition:var(--t)}
+.hero-tags span:hover{border-color:var(--warm);color:var(--warm-dark)}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;padding:.85rem 2rem;background:var(--ink);color:var(--paper);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;transition:var(--t)}
+.hero-cta:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.hero-photo{position:relative;display:flex;justify-content:center}
+.hero-photo img{width:310px;height:310px;object-fit:cover;border-radius:50%;box-shadow:var(--shadow-hover);border:5px solid var(--card-bg)}
+.hero-photo::before{content:'';position:absolute;top:-12px;left:calc(50% - 170px);width:340px;height:340px;border:2px solid var(--warm);border-radius:50%;opacity:.3}
+
+/* SECTIONS */
+section{padding:5rem 0}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:.5rem}
+.section-header p{color:var(--muted);font-size:1.05rem;max-width:600px;margin:0 auto}
+.section-divider{width:50px;height:3px;background:var(--warm);margin:1rem auto 0;border-radius:2px}
+
+/* ABOUT */
+.about-section{background:var(--card-bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{margin-bottom:1.2rem;color:#3a3632}
+.about-text p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.2rem;float:left;line-height:.85;margin-right:.12em;color:var(--accent);font-weight:700}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--paper);padding:1.3rem;border-radius:var(--radius);text-align:center;border:1px solid var(--divider);transition:var(--t)}
+.stat-card:hover{border-color:var(--warm);transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.stat-number{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--accent);line-height:1}
+.stat-label{font-size:.72rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+
+/* AREAS */
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.area-card{background:var(--card-bg);border:1px solid var(--divider);border-radius:var(--radius);padding:2rem 1.8rem;transition:var(--t);position:relative;overflow:hidden}
+.area-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--warm);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.area-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.area-card:hover::before{transform:scaleX(1)}
+.area-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.4rem}
+.area-icon.docencia{background:#fdf2e9;color:#d4781f}
+.area-icon.investigacion{background:#eef2f7;color:#3a6b9f}
+.area-icon.formacion{background:#f3eef8;color:#7b4fa0}
+.area-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.area-card p{color:var(--muted);font-size:.9rem}
+.area-card ul{margin-top:.7rem;padding-left:0;list-style:none}
+.area-card ul li{font-size:.83rem;color:var(--muted);padding:.22rem 0 .22rem 1.1rem;position:relative}
+.area-card ul li::before{content:'\203A';position:absolute;left:0;color:var(--warm);font-weight:700}
+
+/* PUBLICACIONES */
+.pub-section{background:var(--ink);color:var(--paper)}
+.pub-section .section-label{color:var(--warm)}
+.pub-section .section-header h2{color:var(--paper)}
+.pub-section .section-header p{color:rgba(255,255,255,.5)}
+.pub-section .section-divider{background:var(--warm)}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.book-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;transition:var(--t)}
+.book-card:hover{transform:translateY(-6px);box-shadow:0 15px 50px rgba(0,0,0,.3);border-color:var(--warm)}
+.book-cover{height:270px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03);padding:1.2rem}
+.book-cover img{height:100%;width:auto;object-fit:contain;border-radius:3px;box-shadow:5px 5px 20px rgba(0,0,0,.4);transition:transform var(--t)}
+.book-card:hover .book-cover img{transform:scale(1.03)}
+.book-info{padding:1.2rem}
+.book-info h3{font-size:.95rem;color:var(--paper);margin-bottom:.3rem;line-height:1.35}
+.book-info .book-meta{font-size:.75rem;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.03em}
+.book-info p{margin-top:.5rem;font-size:.84rem;color:rgba(255,255,255,.5);line-height:1.55}
+.book-cover-placeholder{height:270px;background:rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.book-cover-placeholder .bcp-icon{font-size:2.5rem;margin-bottom:.8rem}
+.book-cover-placeholder .bcp-text{color:rgba(255,255,255,.5);font-size:.88rem;text-align:center;font-style:italic}
+.articles-section{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.articles-section h3{color:var(--paper);font-size:1.2rem;margin-bottom:1.3rem;text-align:center}
+.article-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.2rem 1.4rem;margin-bottom:.8rem;transition:var(--t)}
+.article-item:hover{border-color:var(--warm);background:rgba(255,255,255,.07)}
+.article-item h4{font-size:.92rem;color:var(--paper);margin-bottom:.2rem}
+.article-item .art-meta{font-size:.75rem;color:rgba(255,255,255,.4);font-weight:600}
+.article-item a{color:var(--warm);font-size:.8rem;font-weight:600}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:4/3;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.8rem;font-weight:600;transform:translateY(100%);transition:transform var(--t)}
+.gallery-item:hover .gallery-caption{transform:translateY(0)}
+
+/* AUDIOVISUALES */
+.av-section{background:var(--card-bg)}
+.videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+.video-card{background:var(--paper);border:1px solid var(--divider);border-radius:var(--radius);overflow:hidden;transition:var(--t)}
+.video-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-info{padding:1.1rem}
+.video-info h3{font-size:.95rem;margin-bottom:.25rem}
+.video-info p{font-size:.83rem;color:var(--muted)}
+.vid-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .55rem;background:#fdf2e9;color:#d4781f;border-radius:50px;margin-top:.4rem}
+
+/* EVENTS */
+.events-list{max-width:800px;margin:0 auto}
+.event-item{display:grid;grid-template-columns:70px 1fr;gap:1.3rem;padding:1.3rem 0;border-bottom:1px solid var(--divider)}
+.event-item:last-child{border-bottom:none}
+.event-year{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--warm);line-height:1;padding-top:.15rem}
+.event-content h3{font-size:.95rem;margin-bottom:.2rem}
+.event-content p{font-size:.85rem;color:var(--muted)}
+.event-badge{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;border-radius:50px;margin-top:.35rem}
+.event-badge.intl{background:#eef2f7;color:var(--blue)}
+.event-badge.nat{background:#f3eef8;color:#7b4fa0}
+.event-badge.local{background:#fdf2e9;color:#d4781f}
+
+/* AWARDS */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.award-card{background:var(--card-bg);border:1px solid var(--divider);border-radius:var(--radius);padding:1.3rem;transition:var(--t);display:flex;gap:.9rem;align-items:start}
+.award-card:hover{border-color:var(--warm);box-shadow:var(--shadow-soft);transform:translateY(-3px)}
+.award-icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--warm),#d4a94a);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;color:#fff}
+.award-card h4{font-size:.9rem;margin-bottom:.15rem}
+.award-year{font-size:.7rem;font-weight:700;color:var(--warm);text-transform:uppercase;letter-spacing:.08em}
+.award-card p{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:3rem;max-width:720px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:11px;top:0;width:2px;height:100%;background:var(--divider)}
+.timeline-item{position:relative;padding-bottom:2rem}
+.timeline-item::before{content:'';position:absolute;left:-3rem;top:6px;width:12px;height:12px;border-radius:50%;background:var(--warm);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--warm);z-index:1}
+.timeline-item h3{font-size:1rem;margin-bottom:.15rem}
+.timeline-date{font-size:.73rem;font-weight:700;color:var(--warm);text-transform:uppercase;letter-spacing:.08em}
+.timeline-item p{margin-top:.25rem;color:var(--muted);font-size:.88rem}
+
+/* CONTACT */
+.contact-section{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info h3{font-size:1.4rem;margin-bottom:1rem}
+.contact-info>p{color:var(--muted);margin-bottom:1.3rem}
+.contact-detail{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem;font-size:.93rem}
+.icon-circle{width:38px;height:38px;border-radius:50%;background:var(--card-bg);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;box-shadow:var(--shadow-soft)}
+.social-links{display:flex;gap:.8rem;margin-top:1.3rem}
+.social-links a{width:42px;height:42px;border-radius:50%;background:var(--card-bg);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);transition:var(--t);font-size:.8rem;font-weight:700;color:var(--muted)}
+.social-links a:hover{background:var(--accent);color:#fff;transform:translateY(-3px)}
+.contact-form{background:var(--card-bg);padding:2.2rem;border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.form-group input,.form-group textarea{width:100%;padding:.75rem .9rem;border:1.5px solid var(--divider);border-radius:var(--radius);font-family:inherit;font-size:.93rem;background:var(--paper);transition:border-color var(--t);color:var(--ink)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--warm)}
+.form-group textarea{resize:vertical;min-height:110px}
+.btn-submit{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;background:var(--accent);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:.83rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;transition:var(--t)}
+.btn-submit:hover{background:var(--ink);transform:translateY(-2px)}
+
+/* QUOTE */
+.quote-block{background:var(--cream);padding:2.8rem;border-radius:var(--radius);text-align:center;margin:3rem 0 0;position:relative}
+.quote-block::before{content:'\201C';font-family:'Playfair Display',serif;font-size:5rem;color:var(--warm);position:absolute;top:-10px;left:50%;transform:translateX(-50%);line-height:1;opacity:.4}
+.quote-block blockquote{font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:var(--ink);line-height:1.6;max-width:600px;margin:0 auto}
+.quote-block cite{display:block;margin-top:.7rem;font-family:'Source Sans 3',sans-serif;font-style:normal;font-size:.82rem;color:var(--muted);font-weight:600}
+
+/* FOOTER */
+.site-footer{background:var(--ink);color:rgba(255,255,255,.4);padding:2.5rem 0;text-align:center;font-size:.83rem}
+.site-footer strong{color:var(--warm)}
+.footer-links{display:flex;justify-content:center;gap:1.3rem;margin-bottom:.8rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.5);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.footer-links a:hover{color:var(--warm)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.15s}.reveal-delay-2{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+.hero{padding:8rem 0 4rem;text-align:center}
+.hero-tags{justify-content:center}.hero-photo{order:-1}
+.hero-photo img{width:200px;height:200px}.hero-photo::before{display:none}
+.areas-grid,.gallery-grid{grid-template-columns:1fr}
+.videos-grid{grid-template-columns:1fr}
+.event-item{grid-template-columns:55px 1fr;gap:.8rem}
+nav{display:none}
+nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(247,245,240,.97);backdrop-filter:blur(15px);justify-content:center;align-items:center;gap:1.5rem;z-index:999}
+nav.open a{font-size:1rem}
+.mobile-toggle{display:block}
+}
+@media(max-width:600px){
+.container{padding:0 1.2rem}
+.stats-grid{gap:.6rem}
+section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+<div class="header-inner">
+<a href="#inicio" class="logo">F<span>.</span> Olascuaga</a>
+<nav id="mainNav">
+<a href="#inicio" class="active">Inicio</a>
+<a href="#sobre-mi">Biografía</a>
+<a href="#areas">Áreas</a>
+<a href="#publicaciones">Publicaciones</a>
+<a href="#audiovisuales">Audiovisuales</a>
+<a href="#eventos">Eventos</a>
+<a href="#reconocimientos">Premios</a>
+<a href="#formacion">Formación</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<button class="mobile-toggle" id="mobileToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+<div class="container"><div class="hero-inner">
+<div class="hero-text">
+<p class="section-label">Bienvenidos</p>
+<h1>Federico<br>Olascuaga <em>Bachino</em></h1>
+<p class="hero-subtitle">Profesor de Historia · Magíster (FLACSO) · Doctorando en Historia (UdelaR).<br>Investigador, autor y docente comprometido con la enseñanza, la investigación histórica y la formación permanente. Maldonado, Uruguay.</p>
+<div class="hero-tags">
+<span>Docencia</span><span>Investigación</span><span>Historia regional</span><span>Masonería</span><span>Patrimonio</span><span>Género</span>
+</div>
+<a href="#sobre-mi" class="hero-cta">Conocer más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+</div>
+<div class="hero-photo">
+<img src="img/Olascuaga_flag_Uruguay.jpg" alt="Federico Olascuaga Bachino">
+</div>
+</div></div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about-section" id="sobre-mi">
+<div class="container">
+<div class="section-header"><p class="section-label">Biografía</p><h2>Trayectoria profesional</h2><div class="section-divider"></div></div>
+<div class="about-grid">
+<div class="about-text reveal">
+<p>Nacido en Minas (Lavalleja) el 30 de octubre de 1982, resido actualmente en Punta del Este, departamento de Maldonado. Soy profesor de Historia egresado del Centro Regional de Profesores del Este (CeRP, ANEP, 2006) y me desempeño como docente desde 2005 en educación media pública y privada en el departamento de Maldonado.</p>
+<p>Poseo una Maestría en Género, Sociedad y Políticas por FLACSO, con una tesis sobre modelos de género en el patrimonio funerario de Paysandú. Actualmente curso el Doctorado en Historia en la Facultad de Humanidades y Ciencias de la Educación (UdelaR), investigando a la masonería uruguaya en sus redes nacionales e internacionales (1903–1947), bajo la dirección de Gerardo Caetano y con beca de la ANII.</p>
+<p>He ejercido la docencia en el Consejo de Formación en Educación (CFE), como profesor de Didáctica I y II de Historia e Historia del Uruguay desde 1930. También me he desempeñado como periodista en medios radiales y escritos, y soy miembro de la Red Académica Internacional de Estudios sobre la Masonería.</p>
+</div>
+<div class="stats-grid reveal reveal-delay-1">
+<div class="stat-card"><div class="stat-number">+20</div><div class="stat-label">Años de docencia</div></div>
+<div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Libros</div></div>
+<div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Artículos arbitrados</div></div>
+<div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">Ponencias</div></div>
+<div class="stat-card"><div class="stat-number">MA</div><div class="stat-label">FLACSO</div></div>
+<div class="stat-card"><div class="stat-number">Dr.©</div><div class="stat-label">UdelaR</div></div>
+</div>
+</div>
+<div class="quote-block reveal">
+<blockquote>«Enseñar a investigar es la respuesta.»</blockquote>
+<cite>— Federico Olascuaga Bachino · TEDx Youth IC Punta del Este, 2018</cite>
+</div>
+</div>
+</section>
+
+<!-- ÁREAS -->
+<section id="areas">
+<div class="container">
+<div class="section-header"><p class="section-label">Ejes de trabajo</p><h2>Áreas de actividad</h2><div class="section-divider"></div></div>
+<div class="areas-grid">
+<div class="area-card reveal"><div class="area-icon docencia">📚</div><h3>Docencia</h3><p>Enseñanza de Historia en educación media y formación docente, con énfasis en investigación e historia local.</p><ul><li>Ciclo básico y bachillerato (CES, desde 2005)</li><li>Didáctica I y II de Historia (CFE)</li><li>Historia del Uruguay desde 1930 (CFE)</li><li>Bachillerato Internacional (IB)</li><li>Proyectos de investigación con estudiantes</li></ul></div>
+<div class="area-card reveal reveal-delay-1"><div class="area-icon investigacion">🔍</div><h3>Investigación</h3><p>Doctorando en Historia (UdelaR) con beca ANII. Miembro de la Red Académica Internacional de Estudios sobre la Masonería.</p><ul><li>Masonería uruguaya (1903–1947) — tesis doctoral</li><li>Historia regional de Maldonado y el este</li><li>Patrimonio industrial y cultural</li><li>Género y patrimonio funerario</li><li>Prosopografía de figuras educativas</li></ul></div>
+<div class="area-card reveal reveal-delay-2"><div class="area-icon formacion">🎓</div><h3>Formación y difusión</h3><p>Formación de posgrado, producción audiovisual educativa y comunicación en medios.</p><ul><li>Doctorando en Historia (FHCE, UdelaR)</li><li>Maestría en Género, Sociedad y Políticas (FLACSO)</li><li>Gestión de Centros Educativos (IPES)</li><li>Documentales históricos con estudiantes</li><li>Periodismo en medios radiales y escritos</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- PUBLICACIONES -->
+<section class="pub-section" id="publicaciones">
+<div class="container">
+<div class="section-header"><p class="section-label">Bibliografía</p><h2>Publicaciones</h2><p>Libros, capítulos y artículos sobre historia regional, masonería, patrimonio y educación.</p><div class="section-divider"></div></div>
+
+<div class="books-grid">
+<div class="book-card reveal"><div class="book-cover"><img src="https://folascuaga.wordpress.com/wp-content/uploads/2018/07/masonerc3ada-tapa-definitiva.png" alt="La Masonería en el Este"></div><div class="book-info"><h3>La Masonería en el Este. Una historia por contar</h3><div class="book-meta">Ed. Fin de Siglo · 2018 · 304 pp.</div><p>Investigación sobre la presencia masónica en Maldonado, Lavalleja y Rocha. Financiado por el Fondo Concursable para la Cultura (MEC).</p></div></div>
+
+<div class="book-card reveal reveal-delay-1"><div class="book-cover"><img src="https://folascuaga.wordpress.com/wp-content/uploads/2017/12/molino-lavagna-130-aos-de-historia-de-federico-olascuaga.jpg" alt="Molino Lavagna"></div><div class="book-info"><h3>Molino Lavagna. 130 años de historia</h3><div class="book-meta">Ed. Fin de Siglo · 2015 · 147 pp.</div><p>Patrimonio industrial de San Carlos. Declarado de interés departamental por la Junta de Maldonado.</p></div></div>
+
+<div class="book-card reveal reveal-delay-2"><div class="book-cover"><img src="img/Grompone_book.jpg" alt="Antonio M. Grompone"></div><div class="book-info"><h3>Antonio M. Grompone: El compromiso de educar</h3><div class="book-meta">Ed. Arca · 2012 · 141 pp.</div><p>Primer Premio, Certamen de Ensayos de la Masonería del Uruguay. Biografía intelectual de Grompone.</p></div></div>
+
+<div class="book-card reveal"><div class="book-cover-placeholder"><div class="bcp-icon">📖</div><div class="bcp-text">3ª ed. revisada y ampliada</div></div><div class="book-info"><h3>Maldonado y su región</h3><div class="book-meta">IUA Ediciones · 2024 · 545 pp.</div><p>Reedición del clásico de Carlos Seijo (1945). Participación en el Consejo Editorial de IUA Ediciones junto a otros compañeros y redacción de la introducción de la obra.</p></div></div>
+
+<div class="book-card reveal reveal-delay-1"><div class="book-cover-placeholder"><div class="bcp-icon">📕</div><div class="bcp-text">Capítulo en libro colectivo</div></div><div class="book-info"><h3>La masonería uruguaya y la república laica (1903–1929)</h3><div class="book-meta">En: Múltiples contextos… · Palabra de Clío, México · 2025</div><p>Capítulo en libro colectivo editado por Mariana Annecchini (pp. 185–212).</p></div></div>
+</div>
+
+<div class="articles-section">
+<h3>Artículos en revistas arbitradas</h3>
+<div class="article-item reveal"><h4>Las logias masónicas de Maldonado y San Carlos en sus redes locales, nacionales e internacionales (1882–1893)</h4><div class="art-meta">Revista Histórica de Maldonado, vol. 1, 2023 · ISSN 2982-4362</div></div>
+<div class="article-item reveal"><h4>La historia de Maldonado y su región</h4><div class="art-meta">Claves. Revista de Historia, vol. 9, n.º 16, 2023 · E-ISSN 2393-6584</div><p style="margin-top:.4rem"><a href="https://ojs.fhce.edu.uy/index.php/claves/article/view/1898/2372" target="_blank">Ver artículo →</a></p></div>
+</div>
+</div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+<div class="container">
+<div class="section-header"><p class="section-label">En imágenes</p><h2>Galería</h2><div class="section-divider"></div></div>
+<div class="gallery-grid reveal">
+<div class="gallery-item"><img src="img/DSC03600__Grande_.jpeg" alt="Presentación"><div class="gallery-caption">Presentación de «El Camino de la Libertad»</div></div>
+<div class="gallery-item"><img src="img/ECDLL-panel.jpg" alt="Panel"><div class="gallery-caption">Panel en el Instituto Uruguayo Argentino</div></div>
+<div class="gallery-item"><img src="img/Conversatorio_02.jpg" alt="Conversatorio"><div class="gallery-caption">Conversatorio académico</div></div>
+<div class="gallery-item"><img src="img/Grompone_book.jpg" alt="Grompone 2012"><div class="gallery-caption">Presentación «Grompone» · 2012</div></div>
+<div class="gallery-item"><img src="img/Presentación_Quirici_La_Azotea_1.jpg" alt="Quirici"><div class="gallery-caption">Presentación libro de Quirici · La Azotea</div></div>
+<div class="gallery-item"><img src="img/Olascuaga_flag_Uruguay.jpg" alt="Federico"><div class="gallery-caption">Federico Olascuaga Bachino</div></div>
+</div>
+</div>
+</section>
+
+<!-- AUDIOVISUALES -->
+<section class="av-section" id="audiovisuales">
+<div class="container">
+<div class="section-header"><p class="section-label">Producción audiovisual</p><h2>Audiovisuales</h2><p>Documentales y materiales educativos elaborados en la actividad docente e investigadora.</p><div class="section-divider"></div></div>
+<div class="videos-grid">
+
+<div class="video-card reveal"><div class="video-embed"><iframe src="https://www.youtube.com/embed/5TGlHEcLI60" title="Julio María Sosa" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>Julio María Sosa</h3><p>Documental elaborado con estudiantes de 6to del IUA (2023). Incluye puesta en valor de la plazoleta homónima.</p><span class="vid-tag">Documental · 2023</span></div></div>
+
+<div class="video-card reveal reveal-delay-1"><div class="video-embed"><iframe src="https://www.youtube.com/embed/Y8rPmz20mjc" title="Batalla de Punta del Este" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>La Batalla de Punta del Este · 1939</h3><p>Documental histórico. En el 80° aniversario se colocó un QR en la Plaza Gran Bretaña enlazando al documental.</p><span class="vid-tag">Documental · 2019</span></div></div>
+
+<div class="video-card reveal reveal-delay-2"><div class="video-embed"><iframe src="https://www.youtube.com/embed/067JSP9nRCE" title="Guerra Fría" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>La Guerra Fría en Punta del Este</h3><p>Reconstrucción de episodios de la Guerra Fría en Punta del Este. Elaborado en el curso de Historia.</p><span class="vid-tag">Documental · 2019</span></div></div>
+
+<div class="video-card reveal"><div class="video-embed"><iframe src="https://www.youtube.com/embed/Yfw7u_65fyI" title="Molino Lavagna" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>Molino Lavagna. 130 años de historia</h3><p>Documental con estudiantes del Liceo Nº2 de San Carlos y Usina Cultural Nº13 (MEC). Origen del libro homónimo.</p><span class="vid-tag">Documental · 2014</span></div></div>
+
+<div class="video-card reveal reveal-delay-1"><div class="video-embed"><iframe src="https://www.youtube.com/embed/lkilbKHZqK4" title="Grompone" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>Antonio Grompone · Repensando la educación pública</h3><p>Audiovisual para la actividad del Día del Patrimonio en la Junta Departamental de Maldonado (2016).</p><span class="vid-tag">Material didáctico · 2016</span></div></div>
+
+<div class="video-card reveal reveal-delay-2"><div class="video-embed"><iframe src="https://www.youtube.com/embed/y6pPufoVOfI" title="Feria del Libro" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>La Masonería en el Este · 41ª Feria del Libro</h3><p>Presentación junto al Prof. Gerardo Caetano en la Feria Internacional del Libro de Uruguay (2018).</p><span class="vid-tag">Presentación · 2018</span></div></div>
+
+<div class="video-card reveal"><div class="video-embed"><iframe src="https://www.youtube.com/embed/vWVNBDnLiYs?start=784" title="Simposio Masonería" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>VII Simposio Internacional de Historia de la Masonería</h3><p>Ponencia con avances de tesis doctoral. Universidad Nacional de La Pampa, Argentina (2024).</p><span class="vid-tag">Ponencia · 2024</span></div></div>
+
+<div class="video-card reveal reveal-delay-1"><div class="video-embed"><iframe src="https://www.youtube.com/embed/vlQsAA_KGsU" title="Conferencia Grompone Salto" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-info"><h3>Conferencia: Antonio M. Grompone</h3><p>Conferencia en la Escuela Hiram de Salto basada en el libro del autor (2013).</p><span class="vid-tag">Conferencia · 2013</span></div></div>
+
+</div>
+</div>
+</section>
+
+<!-- EVENTOS -->
+<section id="eventos">
+<div class="container">
+<div class="section-header"><p class="section-label">Actividad académica</p><h2>Eventos y ponencias</h2><p>Selección de congresos, simposios y presentaciones.</p><div class="section-divider"></div></div>
+<div class="events-list">
+<div class="event-item reveal"><div class="event-year">2025</div><div class="event-content"><h3>1er Congreso Int. sobre Creencias, Esoterismos y Religiosidades</h3><p>Ponencia sobre el anfiteatro masónico Dr. Miguel de Dios Serna en Pando (1932–1942). Universidad de Costa Rica.</p><span class="event-badge intl">Internacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2024</div><div class="event-content"><h3>VII Simposio Int. de Historia de la Masonería</h3><p>Avances de tesis doctoral. Univ. Nacional de La Pampa, Argentina. Constitución de la Red Académica Internacional.</p><span class="event-badge intl">Internacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2024</div><div class="event-content"><h3>Presentación «Uruguay siglo XX» de Gabriel Quirici</h3><p>Comentarista en la Azotea de Haedo. Intendencia de Maldonado.</p><span class="event-badge local">Local</span></div></div>
+<div class="event-item reveal"><div class="event-year">2023</div><div class="event-content"><h3>XII Jornadas Int. de Ciencias Sociales y Religión</h3><p>Ponencia sobre masonería uruguaya. UBA–CONICET, Buenos Aires.</p><span class="event-badge intl">Internacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2018</div><div class="event-content"><h3>TEDx Youth IC Punta del Este</h3><p>«Enseñar a investigar es la respuesta». International College.</p><span class="event-badge nat">Nacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2018</div><div class="event-content"><h3>41ª Feria Int. del Libro · Feria de Maldonado · IX ELEH</h3><p>Presentaciones de «La Masonería en el este» con Gerardo Caetano y Fernando Cairo.</p><span class="event-badge nat">Nacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2017</div><div class="event-content"><h3>XVIII Encuentro Iberoamericano de Cementerios Patrimoniales</h3><p>«Patrimonio en Acción: el cementerio como aula». Con estudiantes del IUA.</p><span class="event-badge intl">Internacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2015</div><div class="event-content"><h3>IX Congreso «Identidad y Patrimonio»</h3><p>Dos ponencias con estudiantes: Molino Lavagna y Modelos de género. Paysandú.</p><span class="event-badge nat">Nacional</span></div></div>
+<div class="event-item reveal"><div class="event-year">2011</div><div class="event-content"><h3>VI Encuentro Educativo-Cultural del Mercosur</h3><p>«Morir en Maldonado. El cementerio como aula». Posadas, Argentina.</p><span class="event-badge intl">Internacional</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- RECONOCIMIENTOS -->
+<section id="reconocimientos" style="background:var(--card-bg)">
+<div class="container">
+<div class="section-header"><p class="section-label">Distinciones</p><h2>Premios y reconocimientos</h2><div class="section-divider"></div></div>
+<div class="awards-grid">
+<div class="award-card reveal"><div class="award-icon">🏆</div><div><h4>Beca ANII–CFE (Posgrados Nacionales 2023)</h4><div class="award-year">2024 · Nacional</div><p>Para elaboración de la tesis doctoral.</p></div></div>
+<div class="award-card reveal reveal-delay-1"><div class="award-icon">🏅</div><div><h4>1ª Mención — Buenas Prácticas Docentes</h4><div class="award-year">2016 · UNESCO / RedPEA</div><p>«Patrimonio en Acción»: recuperación del Molino Lavagna.</p></div></div>
+<div class="award-card reveal reveal-delay-2"><div class="award-icon">🎖️</div><div><h4>Fondo Concursable para la Cultura</h4><div class="award-year">2016 · MEC</div><p>Rubro memorias y tradiciones. Financió el libro sobre masonería.</p></div></div>
+<div class="award-card reveal"><div class="award-icon">📜</div><div><h4>Reconocimiento Junta Dptal. de Maldonado</h4><div class="award-year">2015</div><p>Por investigación y documental del Molino Lavagna.</p></div></div>
+<div class="award-card reveal reveal-delay-1"><div class="award-icon">🏆</div><div><h4>1er Premio — Certamen de Ensayos, Masonería del Uruguay</h4><div class="award-year">2012</div><p>«Grompone: El compromiso de educar». Jurado: Juan Grompone, Dotta Ostria, Lagomarsino.</p></div></div>
+<div class="award-card reveal reveal-delay-2"><div class="award-icon">🔬</div><div><h4>Mención Especial — 24ª Feria Nal. Clubes de Ciencia</h4><div class="award-year">2010</div><p>«Morir en Maldonado». Seleccionados para Feria Int. de Misiones.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+<div class="container">
+<div class="section-header"><p class="section-label">Trayectoria académica</p><h2>Formación</h2><div class="section-divider"></div></div>
+<div class="timeline reveal">
+<div class="timeline-item"><div class="timeline-date">2021 – en curso · UdelaR</div><h3>Doctorado en Historia</h3><p>FHCE. Tesis: «La masonería uruguaya (1903–1947)». Director: Gerardo Caetano. Proyecto aprobado (mayo 2023). Becario ANII.</p></div>
+<div class="timeline-item"><div class="timeline-date">2008 – 2017 · FLACSO Argentina</div><h3>Maestría en Género, Sociedad y Políticas</h3><p>Tesis sobre modelos de género en el Monumento a Perpetuidad de Paysandú. Tutora: Sandra Gayol.</p></div>
+<div class="timeline-item"><div class="timeline-date">2003 – 2006 · CeRP del Este</div><h3>Profesorado de Historia</h3><p>Centro Regional de Profesores del Este, Maldonado (ANEP).</p></div>
+<div class="timeline-item"><div class="timeline-date">2022 – 2023 · IPES «Pivel Devoto»</div><h3>Gestión de Centros Educativos</h3><p>Programa de formación de la ANEP. 225 horas.</p></div>
+<div class="timeline-item"><div class="timeline-date">2020 · Bachillerato Internacional</div><h3>Taller de Historia IB (Cat. 1)</h3><p>16 horas de formación en la asignatura Historia del programa IB.</p></div>
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+<div class="container">
+<div class="section-header"><p class="section-label">Conectemos</p><h2>Contacto</h2><div class="section-divider"></div></div>
+<div class="contact-grid">
+<div class="contact-info reveal">
+<h3>¿Tenés una consulta o propuesta?</h3>
+<p>Podés escribirme para temas de docencia, investigaciones históricas, publicaciones, ponencias o colaboración.</p>
+<div class="contact-detail"><div class="icon-circle">📍</div><span>Punta del Este, Maldonado, Uruguay</span></div>
+<div class="contact-detail"><div class="icon-circle">✉️</div><span><a href="mailto:olascuaga@gmail.com">olascuaga@gmail.com</a></span></div>
+<div class="social-links">
+<a href="https://www.youtube.com/@fedeolascuaga" target="_blank" title="YouTube">YT</a>
+<a href="https://independent.academia.edu/FedericoOlascuagaBachino" target="_blank" title="Academia.edu">Ac</a>
+<a href="https://www.linkedin.com/in/federico-olascuaga-bachino-54866243/" target="_blank" title="LinkedIn">In</a>
+</div>
+</div>
+<form class="contact-form reveal reveal-delay-1" onsubmit="handleSubmit(event)">
+<div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" required></div>
+<div class="form-group"><label for="email">Correo electrónico</label><input type="email" id="email" required></div>
+<div class="form-group"><label for="asunto">Asunto</label><input type="text" id="asunto"></div>
+<div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" required></textarea></div>
+<button type="submit" class="btn-submit">Enviar mensaje <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+</form>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-links">
+<a href="#inicio">Inicio</a><a href="#sobre-mi">Biografía</a><a href="#publicaciones">Publicaciones</a><a href="#audiovisuales">Audiovisuales</a><a href="#eventos">Eventos</a><a href="#contacto">Contacto</a>
+</div>
+<p>© 2026 <strong>Federico Olascuaga Bachino</strong> · Maldonado, Uruguay</p>
+</div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>30)});
+const toggle=document.getElementById('mobileToggle'),nav=document.getElementById('mainNav');
+toggle.addEventListener('click',()=>{toggle.classList.toggle('open');nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{toggle.classList.remove('open');nav.classList.remove('open')})});
+const sections=document.querySelectorAll('section[id]'),navLinks=nav.querySelectorAll('a');
+window.addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+c)})});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function handleSubmit(e){e.preventDefault();alert('Gracias por tu mensaje. En WordPress, conecta este formulario a WPForms, Contact Form 7, o Formspree.')}
+</script>
+</body>
+</html>
